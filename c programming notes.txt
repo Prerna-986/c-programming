@@ -1,0 +1,1433 @@
+C Programming Lanaguage
+# Its devloped by dennis Ritchie
+# creating system applications that directly interact with the hardware devices
+such as dirives, kernels etc...
+# base for other programming languages
+# its also called mother language.
+
+1) Mother Language -- Mother Language of all the modern programming languages becuase
+most of the complier, kernels etc are written in c language.
+Most of the programming language fllow C syntax, example , C++, Java, C# etc
+array, strings, functions, file handling etc
+
+2) System Programming Language -- its used to create system software
+
+3) Procedural Laguage --- In C variables and function prototypes must be declared 
+before being used. A procedural programming language specifies a series of steps
+for the program to solve the problem.
+
+4) Structured Programming Language --- subset of procedural language. 
+structure means to break a program into parts or block 
+so that it may be easy to understand.
+
+5) Mid-Levele Programming Lagauage -- its combination of low level and high level
+low level means --- specific to one machine. machine dependant.
+high level -- is not specific to one machine. machine independant.
+Software -- Turbo C/C++
+
+Basic Structure of C Program (First C Program)
+Required --- Header Files
+#include<stdio.h>
+# Main Function --- Programs Main Entry Point
+void main()
+int main()
+{
+	//Code to be execute
+	Statement;
+	Functions;
+}
+# include<stdio.h>  ---- this is header file of our program
+void main() --- main function
+{
+printf("Hello World...."); ----- printf function is used to output (print the data on the console)
+getch(); ---- its used to  Hold the Console Screen
+}
+Compile Process---Converting the process source code into object code.
+its done with the help of compiler.
+the compiler check the source code error.
+
+#include<stdio.h>
+int main()
+{
+int number;
+printf("Enter a number");
+scanf("%d",&number);
+printf("Square of number is:%d",number*number);
+return 0;
+}
+
+
+Input or output in c
+
+output ---- printf function  for output
+Syntax -- printf("Hello world",argument_list)
+
+Input ---- scanf function for input. it reads the input data from the console.
+# include<stdio>
+Syntax -- scanf("Enter the Number:",argument_list)
+#include <stdio.h>
+
+int main()
+{
+    int number;
+    printf("Enter the Number : ");
+    scanf("%d",&number);
+    printf("Square Result is :%d",number*number);
+    return 0;
+}
+
+#include <stdio.h>
+
+int main()
+{
+    int num1=0,num2=0,result=0;
+    printf("Enter the Number 1 : ");
+    scanf("%d",&num1);
+    printf("Enter the Number 2 : ");
+    scanf("%d",&num2);
+    result = num1 + num2;
+    printf("Addition Result is :%d",result);
+    return 0;
+}
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    // Variable Declare
+    int A;
+    // Variable Initilization
+    A=100;
+    // Variable Declaration + Initilization
+    int B=200;
+    int C = A+B;
+    printf("Value of A is :%d\n",A);
+    printf("Value of B is :%d\n",B);
+    printf("Result Of C is :%d",C);
+    return 0;
+}
+
+Variable,Data Types, Identifier, Rules of identifier,Operators
+
+Variable --- Its name of memory location.
+# variable are used to store the value during the execution of programs.
+# The name itself means, the value of variable can b changed hence the name variable
+# The variable are store in the Main Memory.(RAM)
+
+# Declare Variable before we can use them.
+
+Syntax:
+<DataType> <Variable_Name>; //This is variable declaration
+// Variable Initi.
+<Variable_Name>=<Value>
+//Variable Initialization +Declartion
+<DataType><Variable_Name>=<Value>
+
+Data Types
+# Defind the types of data {example --Numbers(int), Fraction(float),
+Char(Store String Type), Void}
+
+# Int Data Type
+Syntax --- <int><Variable_Name>=<Value>
+Store the Only Numbers Value (Without Fraction)
+Example ---int number = 10;
+
+# Float Data Type
+Syntax --- <float><Variable_Name>=<Value>
+Store the point value in variable.
+Example -- Float number= 10.3; 10.123456
+Percision of upto 6 digits
+
+# include<stdio.h>
+int main()
+{
+    // Declare Float Data Type variable
+    float number;
+    //Initalization
+    number = 12.1234567;
+    printf("Value of Float Type is:%f",number);
+    return 0;
+}
+
+
+
+# Double Data Type
+Syntax --- <double><Variable_Name>=<Value>
+Store the point value in variable.
+Example -- Float number= 10.3; 10.1234567891
+Percision of upto 10 digits
+
+# Char Data Type
+Syntax-- <char><Variable_Name> =<Value>
+Store the single character in variable
+Example--- char Name = 'A';
+
+# include<stdio.h>
+int main()
+{
+    // Declare Float Data Type variable
+    float number;
+    double number2;
+    char Name;
+    //Initalization
+    number = 12.1234567;
+    number2 = 12.12345678911;
+    Name='A';
+    printf("Value of Float Type is:%f\n",number);
+    printf("Value of Double Type is:%lf\n",number2);
+    printf("Value of Character Data Type is:%c",Name);
+    return 0;
+}
+ Operators ---- Perform the calculations between two or more than 
+two operands with the help of operators.
+Operator is the symbol.
+syntax :
+<Variable_Name1><Operator><Variable_Name2>
+Example a+b,a-b,a/b,a*b
+Operators Type --- 1) Uniary 2) Binary 3) Ternary
+1)Arithmatic Operator (+,-,/,*,%)
+2) Relational Operator(>,<,==,>=,<=,!=)
+3) Logical Operator (AND(&&),OR(||),NOT(!))
+4)Assignement Operator(+=,-=,/=,*=,%=)
+5) Increment Decrement (++,--)
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    /* Arithmatic Operators(+(addition),-(Subtraction)
+    ,/(Divide),*(Multiplication),%(Modulas))*/
+    // Variable Declare
+    int a,b,c,c1,c2,c3,c4;
+    printf("Enter The Number1\n");
+    scanf("%d",&a);
+    printf("Enter The Number2\n");
+    scanf("%d",&b);
+    c=a+b;
+    printf("Addition Result is:%d\n",c);
+    printf("---------------------------\n");
+
+    // Subtraction Operation
+    printf("Enter The Number1\n");
+    scanf("%d",&a);
+    printf("Enter The Number2\n");
+    scanf("%d",&b);
+    c1=a-b;
+    printf("Subtraction Result is:%d\n",c1);
+    printf("---------------------------\n");
+
+    // Multiplication Operation
+    printf("Enter The Number1\n");
+    scanf("%d",&a);
+    printf("Enter The Number2\n");
+    scanf("%d",&b);
+    c2=a*b;
+    printf("Multiplication Result is:%d\n",c2);
+    printf("---------------------------\n");
+
+    // Divide Operation
+    printf("Enter The Number1\n");
+    scanf("%d",&a);
+    printf("Enter The Number2\n");
+    scanf("%d",&b);
+    c3=a/b;
+    printf("Divide Result is:%d\n",c3);
+    printf("---------------------------\n");
+
+    // Modulas Operation
+    printf("Enter The Number1\n");
+    scanf("%d",&a);
+    printf("Enter The Number2\n");
+    scanf("%d",&b);
+    c4=a%b;
+    printf("Modulas Result is:%d",c4);
+    return 0;
+}
+
+
+Operators
+
+Arithmatic Operators
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    // Declare Variable
+    int a=10,b=20;
+    printf("Greater Than Result is:%d\n",a>b);
+    printf("Less Than Result is:%d\n",a<b);
+    printf("Greater Than equal Result is:%d\n",a>=b);
+    printf("Less Than equal Result is:%d\n",a<=b);
+    printf("Equal Result is:%d\n",a==b);
+    printf("Not Equal Result is:%d\n",a!=b);
+    return 0;
+}
+Amit, 17:56
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    // Variable Declare
+    int a,b;
+    // Take a input from user
+    printf("Enter The  Number 1:\n");
+    scanf("%d",&a);
+    printf("Enter The Number 2:\n");
+    scanf("%d",&b);
+    // Logical Operator
+    printf("AND Logical Operator Result is:%d\n",a==10 && b==20);
+    // Take a input from user
+    printf("Enter The  Number 1:\n");
+    scanf("%d",&a);
+    printf("Enter The Number 2:\n");
+    scanf("%d",&b);
+    // Logical Operator
+    printf("AND Logical Operator Result is:%d\n",a==10 && b==20);
+    // Take a input from user
+    printf("Enter The  Number 1:\n");
+    scanf("%d",&a);
+    printf("Enter The Number 2:\n");
+    scanf("%d",&b);
+    // Logical Operator
+    printf("AND Logical Operator Result is:%d\n",a==10 && b==20);
+    // Take a input from user
+    printf("Enter The  Number 1:\n");
+    scanf("%d",&a);
+    printf("Enter The Number 2:\n");
+    scanf("%d",&b);
+    // Logical Operator
+    printf("AND Logical Operator Result is:%d\n",a==10 && b==20);
+
+    // OR Operator
+    int num1,num2;
+    // Take a input from user
+    printf("Enter The  Number 1:\n");
+    scanf("%d",&num1);
+    printf("Enter The Number 2:\n");
+    scanf("%d",&num2);
+    printf("OR Logical Operator Result is:%d\n",num1==10||num2==20);
+    // Take a input from user
+    printf("Enter The  Number 1:\n");
+    scanf("%d",&num1);
+    printf("Enter The Number 2:\n");
+    scanf("%d",&num2);
+    printf("OR Logical Operator Result is:%d\n",num1==10||num2==20);
+    // Take a input from user
+    printf("Enter The  Number 1:\n");
+    scanf("%d",&num1);
+    printf("Enter The Number 2:\n");
+    scanf("%d",&num2);
+    printf("OR Logical Operator Result is:%d\n",num1==10||num2==20);
+    // Take a input from user
+    printf("Enter The  Number 1:\n");
+    scanf("%d",&num1);
+    printf("Enter The Number 2:\n");
+    scanf("%d",&num2);
+    printf("OR Logical Operator Result is:%d\n",num1==10||num2==20);
+
+    // NOT Operator
+    int num3,num4;
+    // Take a input from user
+    printf("Enter The  Number 1:\n");
+    scanf("%d",&num3);
+    printf("Enter The Number 2:\n");
+    scanf("%d",&num4);
+    printf("NOT Logical Operator Result is:%d\n",num3!=num4);
+    // Take a input from user
+    printf("Enter The  Number 1:\n");
+    scanf("%d",&num3);
+    printf("Enter The Number 2:\n");
+    scanf("%d",&num4);
+    printf("NOT Logical Operator Result is:%d\n",num3!=num4);
+    return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    // Variable Declare
+    int a = 10;
+    // Assignment Operators
+    printf("Assignment Addition is :%d\n", a+=10);
+    printf("Assignment Subtraction is :%d\n",a-=5);
+    printf("Assignment Multiplication is :%d\n", a*=10);
+    printf("Assignment Divide is :%d\n",a/=15);
+    printf("Assignment Modulas is :%d\n",a%=10);
+    return 0;
+}
+
+4) Assignment Operators --- (=,+=(a+= 10 (a+10),-=,*=,/=,%=)
+5) Uniary Operator --- ++ --
+pre-- ++a;
+post-- a++;
+pre -- --a;
+post -- a--
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+   // Variable Declare
+    int a = 10;
+    // Assignment Operators
+    printf("Assignment Addition is :%d\n", a+=10);
+    printf("Assignment Subtraction is :%d\n",a-=5);
+    printf("Assignment Multiplication is :%d\n", a*=10);
+    printf("Assignment Divide is :%d\n",a/=15);
+    printf("Assignment Modulas is :%d\n",a%=10);
+    printf("-------------------------------------\n");
+    // Unary Operators
+    int a1 = 1;
+    printf("Pre ++ Operator Result is:%d\n",++a1);
+    printf("Post ++ Operator Result is:%d\n",a1++);
+    printf("Post ++ Operator Result is:%d\n",a1);
+    printf("-------------------------------------\n");
+    int b=2;
+    printf("Pre -- Operator Result is:%d\n",--a);
+    printf("Post-- Operator Result is:%d\n",a--);
+    printf("Post-- Operator Result is:%d\n",a);
+    return 0;
+}
+
+6) Ternary Operator  <condition>?true:false
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int a,b;
+    a =10;
+    // Ternary Operator
+    printf("Value of b:%d\n",(a==1)?20:30);
+    printf("Value of b:%d\n",(a==10)?20:30);
+    return 0;
+}
+Tokens --- its smallest indivisual unit in your program.
+int  = 10;
+if(a>10)
+Keywords --- Keywords Reserved words that can be used in the program.
+32 keywords
+auto double int struct
+brek else long switch
+case enum while for if
+goto sizeof default
+
+Identifier---- Identifiers are names given to variable or funtions.
+Rules for identifer -- int a=10; Valid
+int _a=10; Valid
+int a1 = 10; Valid
+int A_B = 10; Valid
+int 1245a=10 Invalid
+int @A1=10; Invalid
+int A1 B1=10; Invalid
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    printf("Welcome To Code Better\n""\'Welcome to Code Better\'""\n""\"Welcome to Code Better\"""\n");
+    return 0;
+}
+
+
+mahendra, 17:48
+Q 1
+
+#include<stdio.h>
+int main()
+{
+printf("Code Better\n""Code Better\"\'Code Better\'");
+return 0;
+}
+
+
+Amit, 17:48
+(y)
+
+mahendra, 17:51
+q2 #include<stdio.h>
+int main()
+{
+ printf("***\n");
+printf("*****\n");
+printf("******\n");
+printf("*******\n");
+return 0;
+}
+
+
+
+Amit, 17:53
+(y)
+
+mahendra, 17:56
+#include<stdio.h>
+int main()
+{
+int a,num1;
+printf("Enter the number:");
+scanf("%d",&num1);
+a =num1*num1;
+printf("square of given number is %d",a);
+return 0;
+}
+
+
+Amit, 17:57
+(y)
+
+mahendra, 18:00
+#include<stdio.h>
+int main()
+{ float r,pi=3.14,area;
+printf("enter the radius of circle:");
+scanf("%f",&r);
+area=pi*r*r;
+printf("Area of circle is %f",area);
+return 0;
+ }
+
+
+Amit, 18:01
+(y)
+
+mahendra, 18:10
+#include<stdio.h>
+int main()
+{ int P,R,T,SI;
+printf("enter the principal values:");
+scanf("%d",&P);
+printf("enter the rate :");
+scanf("%d",&R);
+printf("enter the time:");
+scanf("%d",&T);
+SI=(P*R*T)/100;
+printf("simple interest is %d",SI);
+return 0;
+}
+
+
+Amit, 18:12
+Good Prachi 
+
+
+mahendra, 18:24
+#include<stdio.h>
+int main()
+{ int maths,physics,hindi,english,chemistry,total,percentage;
+printf("score in maths:\n");
+scanf("%d",&maths);
+printf("Score in physics:\n");
+scanf("%d",&physics);
+printf("Score in hindi:\n");
+scanf("%d",&hindi);
+printf("Score in english:\n");
+scanf("%d",&english);
+printf("score in chemistry:\n");
+scanf("%d",&chemistry);
+printf("\n");
+total = maths+physics+hindi+english+chemistry;
+printf("total marks is %d\n",total);
+
+percentage= (total*100)/500;
+printf("percentage score is %d\n",percentage);
+return 0;
+}
+Q9 #include<stdio.h>
+int main()
+{//swapping  without using third variables
+     int var1,var2;
+printf("Enter two number:");
+scanf("%d%d",&var1,&var2);
+printf("Before swapping first variable=%d\n",var1);
+printf("Before swapping second variable=%d\n",var2);
+var1=var1-var2;
+var2=var1+var2;
+var1=var2-var1;
+printf("after swapping first variable =%d",var1 );
+printf("second variable=%d",var2);
+return 0;
+}
+
+
+Amit, 17:51
+Control Statements-----
+if-else statement in c is used to perform the operation on some specific condition.
+if your condition is true then execute if block other wise execute the else block.
+
+1) simple if statement
+2) if-else statement
+3) if else-if ladder statement
+4) Nested if statement
+
+1) if Statement --- if your specific condition is true then execute if block.
+if statement syntax:
+if(condition)
+{
+	// code to be execute
+} 
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int number;
+    printf("Enter The Number is:");
+    scanf("%d",&number);
+
+    // if statement
+    /*if(number==10)
+    {
+        printf("Number is Equal to 10!...\n");
+    }
+    printf("End of the program!.....\n");*/
+
+    // if statement
+    if(number%2==0)
+    {
+
+        printf("Its Even Number!.....\n");
+    }
+    return 0;
+}
+
+
+Amit, 18:11
+if-else statement -- is used to perfrom the two options for the fiven condition.
+if given condition is true then execute if block otherwise excute else block.
+
+if-else syntax:-
+if(condition)
+{
+	// code to be execute if given condition is true
+}
+else
+{
+	// code to be execute 
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int number;
+    printf("Enter the number is :");
+    scanf("%d",&number);
+    if(number%2==0)
+    {
+        printf("Its Even Number!.....\n");
+    }
+    else
+    {
+        printf("Its Odd Number!.....\n");
+    }
+    return 0;
+} 
+
+#include<stdio.h>
+
+int main()
+{
+    int number1,number2;
+    printf("Enter The Number 1:");
+    scanf("%d",&number1);
+    printf("Enter The Number 2:");
+    scanf("%d",&number2);
+
+    // if-else statement
+    if(number1%number2==0)
+    {
+        printf("Number 1 is divisible by Number 2");
+    }
+    else
+    {
+         printf("Number 1 is not divisible by Number 2");
+    }
+    return 0;
+}
+
+
+Amit, 18:19
+if else-if ladder statement---- 
+syntax:
+if(condition)
+{
+	// code to be execute 
+}
+else-if(condition)
+{
+	// code to be execute 
+}
+else-if(condition)
+{
+	// code to be execute 
+}
+else
+{
+	// code to be execute 
+}
+
+
+Amit, 18:26
+#include <stdio.h>
+int main()
+{
+    int number;
+    printf("Enter The Number :");
+    scanf("%d",&number);
+
+    //if else-if statement
+    if(number==1)
+    {
+        printf("Todays Monday");
+    }
+    else if(number==2)
+    {
+        printf("Todays Tuesday");
+    }
+    else if(number==3)
+    {
+        printf("Todays Wednesday");
+    }
+    else
+    {
+        printf("Please Enter The Vaild Number!.....");
+    }
+    return 0;
+}
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    // Declare the variables;
+    int English,Hindi,Math,Science,Social,Total,Percentage;
+    // Take a input from the user
+    printf("Enter The English Subject Marks :\n");
+    scanf("%d",&English);
+    printf("Enter The Hindi Subject Marks :\n");
+    scanf("%d",&Hindi);
+    printf("Enter The Math Subject Marks :\n");
+    scanf("%d",&Math);
+    printf("Enter The Science Subject Marks :\n");
+    scanf("%d",&Science);
+    printf("Enter The Social Science Subject Marks :\n");
+    scanf("%d",&Social);
+
+    // Find the total of 5 subjects marks
+    Total = English+Hindi+Math+Science+Social;
+    printf("Total :%d\n",Total);
+
+    // Find Percentage
+    Percentage =(Total/5);
+    printf("Percentage :%d\n",Percentage);
+
+    // if else if ladder statement
+    if(Percentage>=65)
+        printf("Congratulations! Pass in First Division!..........\n");
+    else if(Percentage>=55)
+        printf("Congratulations! Pass in Second Division!.........\n");
+    else if(Percentage>=45)
+        printf("Congratulations! Pass in Third Division!.........\n");
+    else if(Percentage>=35)
+        printf("Congratulations! Pass in Fourth Division!.........\n");
+    else
+        printf("Sorry Are Your Fail!... Good Luck For Next Attempt...\n");
+    return 0;
+}
+
+
+Amit, 18:10
+Nested If else statement 
+if-else statement is present  inside the body 
+of another if or else then its called nested if-else statement.
+
+Nested if statement are used when we want to check for a condition 
+only when a previous dependent condition is true or false.
+
+Syntax :
+if (condition/expression)
+{
+	if(condition/expression)
+	{
+		// code to be execute
+	}
+	else
+	{
+		// code to be execute
+	}
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int number,number1=20;
+    printf("Enter the number :\n");
+    scanf("%d",&number);
+    // Outer if statement
+    if(number==10)
+    {
+        // inner if-else statement
+      if(number1==10)
+      {
+          printf("Its Equal Number!....\n");
+      }
+      else
+      {
+          printf("Its Not Equal Number!...\n");
+      }
+    }
+    printf("Program End!.....\n");
+    return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int number,number1=20;
+    printf("Enter the number :\n");
+    scanf("%d",&number);
+    // Outer if statement
+    if(number==10)
+    {
+        // inner if-else statement
+      if(number1==10)
+      {
+          printf("Its Equal Number!....\n");
+      }
+      else
+      {
+          printf("Its Not Equal Number!...\n");
+      }
+    }
+    else
+    {
+        printf("Condition is False!....\n");
+    }
+    return 0;
+}
+
+
+Amit, 18:20
+Switch Case Statement
+# The 'switch' is a keyword, by switch we can create selection statements with multiple blocks.
+# We can create mulple blocks with 'case keyword'.
+
+syntax : 
+switch (variable)
+{
+	case 1:
+	{
+		// code to be execute
+		break;		
+	}
+	case 2:
+	{
+		// code to be execute
+		break;		
+	}
+	default:
+	{
+		// code to be execute
+		break;
+	}
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int number=10;
+    switch(number)
+    {
+        case 10:
+        {
+            printf("Choice is Number 10\n");
+            break;
+        }
+        case 20:
+        {
+            printf("Choice is Number 20\n");
+            break;
+        }
+    }
+    printf("End of the program!...\n");
+    return 0;
+}
+
+
+
+ 
+Amit, 17:45
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    // For Loop Statement
+    int i;
+    // Syntax of for loop
+    for(i=0;i<=5;i++)
+    {
+        // Statement of for loop block
+        printf("%d\n",i);
+    }
+    printf("-------------------\n");
+    // for loop
+    for(i=1;i<5;i++)
+    {
+        printf("%d\n",i);
+    }
+    return 0;
+}
+
+
+Amit, 17:56
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    // for loop
+    for(int i=1;i<=10;i++)
+    {
+        int a = i*2 ;
+        printf("%d\n",a);
+    }
+    printf("--------------------\n");
+
+    // for loop
+    int number, result;
+    printf("Enter Any Number :\n");
+    scanf("%d",&number);
+    for(int i=1;i<=10;i++)
+    {
+        // print table
+        result = i * number;
+        printf("%d\n",result);
+    }
+    return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    for(int i=1;i<=5;i++)
+    {
+        printf("\'Welcome To Code Better'\ \n");
+    }
+
+    return 0;
+}
+
+
+Amit, 18:03
+Nested For loop --- In nested for loop one or more statements can be included in the
+body of the loop. In nested for loop, the number of iterations will be equal to the number
+of iterations in the outer loop muliplied by the number of iterations in the inner loop.
+
+Syntax
+
+for (initialization;condition;++ or --) // Outer Loop
+{
+	for(initialization;condition;++ or --) // Inner Loop
+	{
+		Statement of inner loop
+	}
+}
+
+
+Amit, 18:10
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    // Outer Loop
+   for (int i=1; i<=5;i++)
+   {
+       // inner loop
+       for(int j=1;j<=5;j++)
+       {
+           printf("%d",j);
+       }
+       printf("\n\n");
+   }
+    return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    // Outer Loop
+    for(int i=1;i<=15;i++)
+    {
+        for(int j=1;j<i;j++)
+        {
+            printf("*");
+        }
+        printf("\n\n");
+    }
+    return 0;
+}
+
+While-Loop --- A loop is nothing but executes a block of instructions repeatedly as long
+as the condition is true. when the condition is false it will terminate the loop execution.
+
+Syntax
+Initialization Variable;
+while (conditon)
+{
+	Block of Statement
+	++ or --;
+}
+
+
+Amit, 18:25
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    // While loop
+    int i =1;
+    while(i<=5)
+    {
+        printf("%d\n",i);
+        i++;
+    }
+    printf("-----------------\n");
+    int j=10;
+    while(j>=10 && j<=20)
+    {
+        printf("%d\n",j);
+        j++;
+    }
+    return 0;
+}
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    // 2,6,10,14,18,22,26,30+............
+    int i=2, end;
+    printf("Enter the any number :\n");
+    scanf("%d",&end);
+    printf("--------Result--------\n");
+    // Using While loop
+    while(i<=end)
+    {
+        printf("%d\n",i);
+        i = i+4;
+    }
+    return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+   int i=0, j=1,k,number;
+   printf("Enter the number :\n");
+   scanf("%d",&number);
+   printf("------------Fab. Result is----------\n");
+   printf("%d %d",i,j);
+   k= i+j;
+
+   // while loop
+   while(k<=number)
+   {
+       printf(" %d\n",k);
+       i=j;
+       j=k;
+       k=i+j;
+   }
+    return 0;
+}
+
+
+Amit, 18:11
+Do-While Loop---- # The do while loop is post tested loop.
+# Using the do-while loop, we can repeat the execution of several parts of the statements.
+# if the condition is false then execute at leat one time.
+
+syntax :--
+Initialization of Variable;
+do
+	{
+		//Code to be execute
+		i++/i--;
+	}
+while(condition)
+
+
+Amit, 18:23
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    // initialization
+    int i=1;
+    // do body
+    do
+    {
+        printf("\"Welcome to Code Better\"""\n");
+        i++;
+    }
+    // condition
+    while(i<=5);
+    return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+   int i=10;
+   do
+   {
+       printf("%d\n",i);
+       i++;
+   }
+   while(i<=1);
+   return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int i= 10;
+    do
+    {
+        printf("%d\n",i);
+        i--;
+    }
+    while(i>=1);
+    return 0;
+
+Nested Do-While Loop---
+
+Initialization of Variable;
+do
+	{
+		do
+		{
+			//Code to be execute
+			i++/i--;
+		}
+	}
+while(condition)
+	}
+while(condition)
+
+#include <stdio.h>
+int main()
+{
+    int n=10;
+    while (n>=0)
+    {
+	 if (n==7)
+	 {
+	      n--;
+	      continue;
+	 }
+	 printf("%d  ", n);
+  	n--;
+    }
+    return 0;
+}
+
+13:41
+//natural numbers from 1 to n//
+#include<stdio.h>
+int main()
+
+{ int i,n;
+printf("Enter any integer value:");
+scanf("%d",&n);
+printf("list of natural numbers from 1 to %d are\n",n);
+for(i=1;i<=n;i++)
+{printf("%d\n ",i);
+}
+return 0;}
+Functions/Method in C
+
+Function is a block of the code that perform a specific task.
+Function is alao called as modular or procedures.
+
+1) Monolithic Programming ----- only single function 
+we can write all the code in single function.
+
+Example ---- 
+int main()
+{
+	line1
+	line2
+	------------------------------
+	------------------------------
+}
+
+2) Modular Programming----  if we broke the program into smaller tasks.
+Example ---
+function1()
+{
+	// body of the function
+}
+function2()
+{
+	// body of the function
+}
+
+function3()
+{
+	// body of the function
+}
+main()
+{
+	function1();
+	function2();	
+	function3();	
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+
+// User Define Function
+int add(int a,int b)
+{
+   int result;
+   result=a+b;
+   return(result);
+}
+int main()
+{
+    // Modular Programming Example
+    printf("Hello world!\n\n");
+    // Function Calling
+    int c=add(10,20);
+    printf(" %d\n\n",c);
+
+    int d = add(30,40);
+    printf("  %d\n",d);
+    return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    // Monolithic Programming Example
+    int a,b,result;
+    a=10;b=20;
+    result = a+b;
+    printf("  %d\n",result);
+    return 0;
+}
+#include <stdio.h>
+#include <stdlib.h>
+// User Define Function
+void show()
+{
+    printf("This is Simple Show Function!.......\n\n\n");
+}
+int main()
+{
+    printf("Hello world!\n\n\n");
+
+    // Call Function
+    show();
+    return 0;
+}
+
+1) Call By Value ----
+# A copy of the value is passed into the function. 
+# Changes made inside the function is limited only function.
+# Formal & Actual Paramters are created at the different memory location.
+
+2) Call By Reference --- 
+# An address of vslue is passed into the funtion.
+# Changes made inside and outside the function.
+# Formal & Actual Paramters are created at the Same memory location.
+
+# Recursion in C
+
+# Recursion is the process which comes into existence when a 
+function call a copy of itself to work on a smaller problem.
+
+# Any Function which call itself is called recursive function.
+# Function call is recursive call.
+
+# Recursion can not be applied to all the problem.
+sorting, searching etc.......
+
+
+#include <stdio.h>
+#include <stdlib.h>
+int fact(int n)
+{
+    if (n==0)
+    {
+        return 0;
+    }
+    else if(n==1)
+    {
+        return 1;
+
+    }
+    else
+    {
+        return n*fact(n-1);
+    }
+}
+int main()
+{
+    int n;
+    printf("Enter the number :");
+    scanf("%d",&n);
+    int f = fact(n)
+;
+    printf("Factorial Result is = %d",f);
+    return 0;
+}
+
+
+
+Array --- its collection of smilar types of data items.
+
+Declaration of array :
+
+<data_type><array_name>[size_array]
+
+Example --- int demo[3]
+
+
+Initialization of array in c
+demo[0] = 10;
+demo[1] = 20;
+demo[2] = 30;
+
+Types of array --- 1) 1D Array
+2) 2D Array
+
+1) 1D Array -- # its one dimensional array
+# its store the same type element
+
+Syntax :
+<data_Type><Array_Name>[Array_Size];
+
+1) Initialization of 1D Array
+1) Complie time (Static Initialization)
+2) Run Time (Dynamic Initialization)
+
+
+1) Complie Time ---- <data_Type><Array_name>[Array_Size] = (List of elements)
+
+Example ---- int demo[5]={10,20,30,40,50};
+
+2) Run time --- it means the array can be initilaized at runtime.
+
+
+Pointer to Pointer 
+
+# holding the pointer address into another pointer variable.
+
+Pointer to array of function
+
+Pointer to function --- 
+The pointer variable which holds the address of a function is called as a function pointer
+
+
+
+
+Structure in C --- Structure is a user defined data type that enables us to 
+store the collection of different types of the data.
+Each Element of a structure is called the memebers.
+
+Syntax :
+<struct keyword> <structure_name>
+{
+	data_members 1;
+	data_members 2
+};
+
+Example :
+struct Student_Information
+{
+	int student_id;
+	char Student_Name[20];
+	char Student_Address[50];	
+};
+
+# Accessign the memebers of structure
+1) By . operator
+2) by -> pointer operator
+
+#include <stdio.h>
+#include <stdlib.h>
+#include<string.h>
+// Structure
+struct Student_Inforamtion
+{
+    // Structure data memebers
+    int Student_ID;
+    char Student_Name[50];
+    char Student_Address[100];
+}S1,S2;
+int main()
+{
+    // store the student 1 information
+    S1.Student_ID = 101;
+    strcpy(S1.Student_Name,"Prachi Parmar");
+    strcpy(S1.Student_Address,"Indore");
+
+    S2.Student_ID = 102;
+    strcpy(S2.Student_Name,"Amit Solanki");
+    strcpy(S2.Student_Address,"Khargone");
+    printf("Student ID is : %d\n",S1.Student_ID);
+    printf("Student Name is : %s\n",S1.Student_Name);
+    printf("Student Address is : %s\n",S1.Student_Address);
+
+    printf("--------------------------------------------\n\n");
+
+    printf("Student ID is : %d\n",S2.Student_ID);
+    printf("Student Name is : %s\n",S2.Student_Name);
+    printf("Student Address is : %s\n",S2.Student_Address);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
