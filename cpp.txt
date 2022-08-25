@@ -1,0 +1,905 @@
+******************CLASS AND OBJECT**************************
+____________Q.1  STUDENT DETAILS____________________
+
+include <iostream>
+using namespace std;
+
+class student
+{
+	private:
+		char  name[30];
+		int   rollNo;
+		int   total;
+		float per;
+	public:
+    	void inputdata()
+	{	cout << "Enter name: " ;
+    	cin >> name;
+    	cout << "Enter roll number: ";
+    	cin >> rollNo;
+    	cout << "Enter total marks outof 500: ";
+    	cin >> total;
+}
+		void dispalydata();
+		
+		void Percentageper();
+};
+
+void student::dispalydata(){
+        cout<<"STUDENT INFORMATION"<<endl;
+    	cout << "Name="<<name<<endl;
+    	cout << "Rollno= "<<rollNo<<endl;
+	    cout << "Total="<<total<<endl;
+}
+void student::Percentageper()
+	{
+	    float per;
+    	per=total/500*100;
+     	cout<<"Percentage="<<per;
+
+}
+
+int main()
+{
+    	student st;		
+	
+	    st.inputdata();
+    	st.dispalydata();
+    	st.Percentageper();
+	
+    	return 0;
+}
+
+----------------------------**********************----------------------------------------
+**********************Q.2 LAPTOP DETAILS******************************
+#include<iostream>
+using namespace std;
+class laptop
+{
+    private:
+string brand,model;
+float price,screen_size;
+public:
+void get_input(){
+
+cout<<"ENTER BRAND =";
+cin>>brand;
+cout<<endl<<"ENTER MODEL =";
+cin>>model;
+cout<<endl<<"ENTER PRICE =";
+cin>>price;
+cout<<endl<<"ENTER SCREEN_SIZE =";
+cin>>screen_size;
+
+}
+void show_details();
+    
+};
+void laptop::show_details()
+{
+    cout<<" BRAND ="<<brand<<endl;
+cout<<endl<<" MODEL ="<<model<<endl;
+cout<<endl<<"PRICE ="<<price<<endl;
+cout<<endl<<"SCREEN_SIZE ="<<screen_size<<endl;
+} 
+int main()
+{ laptop l;
+l.get_input();
+l.show_details();
+return 0;
+}
+
+------------------------------**********************************************---------------------------------------
+------------------------Q.4 RECTANGLE AREA AND PERIMETER------------------------------------------------------
+#include <iostream>
+
+using namespace std;
+
+class Rectangle
+{
+	private:
+		float length;
+		float width;
+	public:
+		void setlength(float);
+		void setwidth(float);
+		float perimeter();
+		float area();
+		void show();
+		
+		
+};
+
+void Rectangle::setlength(float len)
+{
+	length = len;
+}
+void Rectangle::setwidth(float wid)
+{
+	width = wid;
+}
+float Rectangle::perimeter()
+{
+	return (2  length + 2  width);
+}
+float Rectangle::area()
+{
+	return (length * width);
+}
+void Rectangle::show()
+{
+	cout << "Length: " << length<< " Width: " << width;
+    
+}
+
+
+int main(){
+    Rectangle first;
+	Rectangle second;
+	first.setlength(4);
+	first.setwidth(2);
+	second.setlength(5);
+	second.setwidth(19);
+	cout << "First rectangle: ";
+	first.show();
+	cout << endl << "Area: " << first.area();                                                                                                              cout << "Perimeter: " << first.perimeter()  << endl;
+	cout << "Second rectangle: ";second.show();
+	cout << endl << "Area: " << second.area() ;                                                                                                                       cout<< "Perimeter: " << second.perimeter()  << endl;
+	
+		
+	return 0;
+}
+
+**********************************************************************************************************************
+---------------------------Q.5 COMPLEX NUMBER ---------------------------------------------
+#include<iostream>
+using namespace std;
+class complex{
+	 int real;
+	 int img;
+	 public :
+	 		void getData();
+	 		void display();
+	 		complex add(complex);
+};
+void complex::getData(){
+		cout<<"Enter real part :- ";
+		cin>>real;
+		cout<<"Enter img part :- ";
+		cin>>img;
+}
+void complex::display(){
+	cout<<real<<"+"<<img<<"i"<<endl;
+}
+complex complex::add(complex c2){
+		complex temp;
+		temp.real = real+c2.real;
+		temp.img = img +c2.img;
+		return temp;
+}
+int main(){
+	complex c1,c2,c3;
+	c1.getData();
+	c2.getData();
+	c3=c1.add(c2);  
+	c3.display();
+	
+}
+
+*****************************************************************************************************************
+--------------------------Q.6 DISTANCE--------------------------------------------------------------------------
+
+#include<iostream>
+using namespace std;
+class Dis{
+	int km,m;
+	public:
+	Dis(){
+		km=m=0;
+	}
+	Dis(int km,int m){
+		this->km=km;
+		this->m=m;
+	}
+	
+	void add(Dis);
+	
+};
+void Dis::add(Dis d2){
+	int Km,M;
+	Km= km+d2.km;
+	M=m+d2.m;
+	if(M>=1000){
+		int r =M/1000;
+		Km+=r;
+		M=(r*1000)-M;
+	}
+	cout<<"Kilometer part :"<<Km<<endl;
+	cout<<"Meter part :"<<M<<endl;
+}
+int main(){
+	Dis d1= Dis(5,1600);
+	Dis d2=Dis(1,500);
+	d1.add(d2);
+	
+}
+*************************Static Data Member and function *********************************************
+--------------------------Q.7 BANK DETAILS------------------------------------------------
+
+
+#include<iostream>
+using namespace std;
+
+class bank
+{
+ private:
+     float p;
+     float r;
+     float t;
+     float si;
+     float amount;
+     char name[20];
+     char account_type[20];
+     int account_number;
+     
+ public:
+    void input ( )
+          {      cout<<"Enter the name::"<<endl;
+                 cin>>name;
+                 cout<<"Enter Account_type::"<<endl;
+                 cin>>account_type;
+                 cout<<"Enter account number::"<<endl;
+                 cin>>account_number;
+                 cout <<" Enter Principle Amount :: ";
+                 cin>>p ;
+                 cout<<" Enter Rate of Interest :: ";
+                 cin>>r;
+                 cout <<" Enter Number of years :: ";
+                 cin>>t;
+                 
+                si = (p *r*t) /100;
+                 amount = si + p;
+                 
+}     
+    void show()
+         { 
+                cout<<"  Entered Details are :: "<<endl<<endl;
+                cout<<"  Enter the name:"<<name;
+                cout<<"  Enter Account_type:"<<account_type<<endl;
+                cout<<"  Enter account number:"<<account_number<<endl;
+                cout<<"  Principle Amount: "<<p<<endl;
+                cout <<" Rate of Interest: "<<r<<endl;
+                cout <<" Number of years: "<<t<<endl;
+                cout <<" Interest : "<<si<<endl;
+                cout <<" Total Amount : "<<amount<<endl;
+         }
+};
+
+int main ()
+{
+    bank b ;
+    b.input ( );
+    b.show ( );
+
+    return 0;
+}
+
+
+************************************************************************************************
+--------------------------CONSTRUCTOR---------------------------------------------------------
+_______________________Q.8 TOLLBOOTH OF VEHICLE_____________________________________________________
+#include <iostream>
+using namespace std;
+class Tollbooth {
+  private:
+    int number;
+    int amount;
+
+  public:
+  Tollbooth(){
+      number = amount =0;
+  }
+   
+    Tollbooth(int no , int amt) {
+      number = no;
+      amount = amt;
+    }
+
+    void display(){
+        cout<<"Enter the vehicle number:";
+        cin>>number;
+        cout<<"Enter the amount:";
+        cin>>amount;
+
+    }
+};
+int main() {
+  Tollbooth t= Tollbooth(7890,80);
+  t.display();
+  return 0;
+}
+
+***************************************************************************************************
+---------------Q.9  EMPLOYEE---------------------------------------
+#include <iostream>
+using namespace std;
+class Employee {
+   public:
+       string name;
+       string lastname;
+       float salary;
+       Employee(string n, string ln, float s)  
+        {  
+            name = n;  
+           lastname = ln;  
+            salary = s;
+        }  
+       void display()  
+        {  
+            cout<<name<<"  "<<lastname<<"  "<<salary<<endl;  
+        }  
+};
+int main() {
+    Employee e1 =Employee("Prachi", "Parmar", 30000); 
+    Employee e2=Employee("Kinshuk", "Kanthed", 20000); 
+    Employee e3 =Employee("Prachi","Parmar",33000);
+    Employee e4 =Employee("Kinshuk","Kanthed",22000);
+    e1.display();  
+    e2.display();
+    e3.display();
+    e4.display();
+    return 0;
+}
+******************************FUNCTION OVERLOADING********************************************
+----------------Q.11 CLASS SHAPEAREA FOR CIRCLE AND RECTANGLE---------------------------------
+#include <iostream>
+using namespace std;
+class Shape{
+    private:
+        int l, b;
+        float r;
+    public:
+        void input(int len, int bre){
+            l = len;
+            b = bre;
+        }
+        void get(float rad){
+            r = rad;
+        }
+        int area(){
+            return l * b;
+        }
+        float area(){
+            return (3.14*r*r);
+        }
+};
+int main(){
+Shape r1,c;
+    r1.input(10, 9);
+    c.input(8.2);
+    cout << "Area of r1: " << r1.area() << endl;
+    cout << "Area of c: " << c.area() << endl;
+}
+
+***********************************FRIEND FUNCTION  **************************************************
+---------------------------Q.12 SWAP OF TWO DIFFERENT CLASS VARIABLE----------------------------------
+#include<iostream>
+using namespace std;
+class XYZ;
+class ABC
+{
+    private:
+        int num1;
+    public:
+        ABC(){
+            num1 =-1;
+        }
+        ABC(int num1)
+        {
+            this->num1=num1;
+        }
+        void display()
+        {
+            cout<<" Value of Number 1 : "<<num1<<endl;
+        }
+        friend void swap(ABC &a,XYZ &b);
+};
+class XYZ
+{
+    private:
+        int num2;
+    public:
+        XYZ(){
+            num2 =-1;
+        }
+        XYZ(int num2)
+        {
+            this->num2=num2;
+        }
+        void display()
+        {
+            cout<< "value of number 2: "<<num2<<endl;
+        }
+        friend void swap(ABC &a, XYZ &b);
+};
+void swap(ABC &ob1,XYZ &ob2)
+{
+    int n3;
+    n3=ob1.num1;
+    ob1.num1=ob2.num2;
+    ob2.num2=n3;
+}
+int main()
+{
+    ABC a(30);
+    XYZ b(40);
+    cout<<"Before swapping:"<<endl;
+    
+    a.display();
+    
+    b.display();
+    swap(a, b);
+    cout<< "After swapping:"<<endl;
+    a.display();
+    b.display();
+
+    
+    return 0;
+}
+*****************************************************************************************************
+---------------------------Q.13 Maximum between three different class variable-----------------------
+#include<iostream>
+using namespace std;
+class MNP;
+class XYZ;
+class ABC
+{
+private:
+int x;
+public:
+ABC(){
+    x =-1;
+}
+ABC(int x)
+{
+this->x=x;
+}
+void display()
+{
+cout<<" Value of Number 1 : "<<x<<endl;
+}
+friend void max(ABC,XYZ,MNP);
+};
+class XYZ
+{
+private:
+int y;
+public:
+XYZ(){
+    y=-1;
+}
+XYZ(int y)
+{
+this->y=y;
+}
+void display()
+{
+cout<< "value of number 2: "<<y<<endl;
+
+}
+friend void max(ABC , XYZ,MNP);
+};
+class MNP
+{
+private:
+int z;
+public:
+MNP(){
+    z =-1;
+}
+MNP(int z)
+{
+this->z=z;
+}
+void display()
+{
+cout<<" Value of Number 3: "<<z<<endl;
+}
+friend void max(ABC ,XYZ ,MNP );
+};
+
+void max(ABC a ,XYZ b, MNP c)
+{
+
+if(a.x>b.y &&a.x>c.z)
+
+{
+
+cout<<"Greater value is:"<<a.x;
+
+}
+
+else if(b.y>c.z)
+
+{
+
+cout<<"Greater value is:"<<b.y;
+
+}
+else{
+    cout<<"Greater value is:"<<c.z;
+}
+
+}
+int main()
+{
+
+ABC a(30);
+XYZ b(40);
+MNP c(78);
+
+
+a.display();
+b.display();
+c.display();
+max(a, b,c);
+
+
+return 0;
+}
+***********************************************************************************
+__---------------------------------------------------------------------------------
+
+
+
+_____________________OPERATOR OVERLOADING ____________________________________
+*********************Q.16  add two complex number ******************************
+#include <iostream>
+using namespace std;
+class complex{
+	      int real;
+	      int img;
+	 public : 
+	       complex(){
+	       real =img =0;
+	         }
+	         complex(int r,int i){
+	             real =r;
+	             img =i;
+	                            }
+	         void display(){
+	             cout<<real<<"+"<<img<<"i"<<endl;
+	                       }
+	 		
+	         complex operator +(complex c2){
+	         complex add;
+	         add.real =real+c2.real;
+	         add.img =img +c2.img;
+	         return add;
+     	}
+    };
+	 	
+int main() {
+
+	complex c1(10,5);
+	complex c2(5,4);
+	complex c3 = c1+c2;
+	c3.display();  
+	return 0;
+}
+*********************subtract two complex number*****************************
+
+#include<iostream>                                                                                                                                                  using namespace std;
+class Demo{
+	      int real;
+	      int img;
+	 public : 
+	       Demo(){
+	       real =img =0;
+	         }
+	         Demo(int r,int i){
+	             real =r;
+	             img =i;
+	         }
+	         void display(){
+	             cout<<real<<"-"<<img<<"i"<<endl;
+	         }
+	 		
+	Demo operator -(Demo c2){
+	    Demo sub;
+	    sub.real =real-c2.real;
+	    sub.img =img -c2.img;
+	    return sub;
+	}
+};
+	 	
+int main() {
+
+	Demo c1(35,37);
+	Demo c2(25,19);
+	Demo c3 = c1-c2;
+	cout<<"result:  ";
+	c3.display();  
+	return 0;
+    
+}
+
+Q.17
+
+#include<iostream>
+using namespace std;
+class Student{
+	protected:
+	string name;
+	string add;
+	string board;
+	public :
+		void getSchoolInfo(string name,string add,string board){
+			this->name=name;
+			this->add=add;
+			this->board=board;
+		}
+};
+class SchoolStudent : public Student{
+	int roll;
+	int cls;
+	int fee;
+	public:
+		void getStudentInfo(int roll,int cls , int fee){
+			this->roll=roll;
+			this->cls=cls;
+			this->fee=fee;	
+		}
+		void display(){
+			cout<<"name :"<<name<<endl;
+			cout<<"address :"<<add<<endl;
+			cout<<"board : "<<board<<endl;
+			cout<<"roll number :"<<roll<<endl;
+			cout<<"class :"<<cls<<endl;
+			cout<<"fee :"<<fee<<endl;
+		}
+};
+int main(){
+	SchoolStudent s;
+	s.getSchoolInfo("Prachi","AA","CV");
+	s.getStudentInfo(2,12,92211);
+	s.display();
+}
+
+virtual function
+#include<iostream>
+using namespace std;
+class Base{
+	public :
+		virtual void vfun(){
+			cout<<"This is Base function"<<endl;
+		}
+};
+class Derived1 : public Base{
+	public :
+		 void vfun(){
+			cout<<"This is Derived 1 function"<<endl;
+		}
+};
+class Derived2 : public Base{
+	public :
+		 void vfun(){
+			cout<<"This is Derived 2 function"<<endl;
+		}
+};
+int main(){
+	Base b , *p;
+	Derived1 d1;
+	Derived2 d2;
+	p=&b;
+	p->vfun();  // Base class fn will called.
+	p=&d1;
+	p->vfun(); // Derived 1 class fn will called.
+	p=&d2;
+	p->vfun(); // Derived 1 class fn will called.
+	
+	
+}
+ 
+
+pure virtual function
+#include<iostream>
+using namespace std;
+class Base{
+	public :
+		virtual void vfun()=0;
+};
+class Derived1 : public Base{
+	public :
+		 void vfun(){
+			cout<<"This is Derived 1 function"<<endl;
+		}
+};
+class Derived2 : public Base{
+	public :
+		 void vfun(){
+			cout<<"This is Derived 2 function"<<endl;
+		}
+};
+int main(){
+	Base *p;
+	Derived1 d1;
+	Derived2 d2;
+	p=&d1;
+	p->vfun(); // Derived 1 class fn will called.
+	p=&d2;
+	p->vfun(); // Derived 1 class fn will called.
+	
+	
+}
+
+
+templates
+#include<iostream>
+using namespace std;
+template <typename T> 
+	T myMax(T x, T y){
+		if(x>y)
+			return x;
+		else 
+			return y;
+	}
+	/*
+			int myMax(int x, int y){
+		if(x>y)
+			return x;
+		else 
+			return y;
+	}
+	*/
+
+int main(){
+	cout<<myMax<int>(2,5)<<endl;  //5
+	cout<<myMax<float>(5.5,6.3)<<endl;//6.3
+	cout<<myMax<char>('q','s')<<endl;//s
+}
+
+
+file handling write operation
+#include<iostream>
+#include<fstream>
+using namespace std;
+/*
+1. fstream :- read and write both operation will be performed
+2. ofstream :- write operation perform
+3. ifstream :- read operation perform
+
+*/
+
+int main(){
+	string line;
+	ofstream fs("dummy1.txt");
+	if(fs.is_open()){ //this function returns boolean value
+		cout<<"Enter line :- "<<endl;
+		cin>>line;
+		fs<<line<<endl;
+    }
+    else{
+    	cout<<"File is not open !!"<<endl;
+	}
+}
+
+
+file handling read operation
+#include<iostream>
+#include<fstream>
+using namespace std;
+
+
+int main(){
+	string line;
+	ifstream fs("dummy.txt");
+	if(fs.is_open()){
+		while(getline(fs,line)){
+			cout<<line<<endl;
+		}
+		fs.close();
+	}	
+	else{
+		cout<<"File is not open !!"<<endl;
+	}
+}
+
+Q.20
+
+#include<iostream>
+using namespace std;
+class shape{
+	protected :
+		int x,y;
+	public :
+			virtual void getData()=0;
+			virtual void findArea()=0;
+};
+class circle : public shape{
+	public :
+		void getData(){
+			cout<<"Enter Radius :";
+			cin>>x;
+		}
+		void findArea(){
+			cout<<"Area of Circle :"<<(3.14*x*x)<<endl;
+		}
+};
+int main(){
+	shape *p;
+	circle c;
+	p=&c;
+	p->getData();
+	p->findArea();
+	
+}
+
+iostream overloading
+#include<iostream>
+using namespace std;
+class demo{
+	int x,y;
+	public:
+	friend istream& operator >>(istream &cin ,demo &d);
+	friend ostream& operator <<(ostream &cout ,demo &d);
+};
+istream& operator >>(istream &cin ,demo &d){
+	cin>>d.x;
+	cin>>d.y;
+	return cin;
+}
+ostream& operator <<(ostream &cout ,demo &d){
+	 cout<<"x :"<<d.x;
+	 cout<<"y :"<<d.y;
+	 return cout;
+}
+int main(){
+	demo d;
+	cout<<"Enter Demo's Value :";
+	cin>>d;
+	cout<<d;
+}
+/* 
+	cin -> istream class
+	cout ->ostream class
+*/
+
+operator overloading
+
+#include<iostream>
+using namespace std;
+class disTance{
+	int km,m;
+	public:
+	disTance(){
+		km=m=0;
+	}
+	disTance(int km,int m){
+		this->km=km;
+		this->m=m;
+	}
+	void display();
+	disTance operator +(disTance d2){
+		disTance temp;
+		temp.km=km+d2.km;
+		temp.m=m+d2.m;
+		return temp;
+	}
+	
+};
+void disTance::display(){
+	cout<<"Kilometer :"<<km<<endl;
+	cout<<"Meter :"<<m<<endl;
+}
+int main(){
+	int a=4,b=6;
+	disTance d1=disTance(4,300);
+	disTance d2=disTance(6,70);
+	disTance d3=d1+d2;  //Invaild Statement  d3=d1.operator+(d2)
+	/*
+		disTance d3=d1.add(d2);
+	*/
+	d3.display();
+	cout<<"Addition of Int "<<a+b<<endl;
+}
